@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR" data-bs-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -15,17 +15,54 @@
     <script src="sweetalert.js"></script>
 </head>
 
-<body>
-    <div class="row mt-1">
-        <div class="col-lg-6 col-md-6 col-sm-12">
-            <button class="btn btn-sm btn-info" id="btninfo">Apagar titulo danger</button>
-            <h4 class="text-info mt 2" id="Titulo_info">Titulo info</h4>
+<body style="background-image:url(pink.jpg); background-size: cover;">
+    <nav class="navbar" style="background-color: rgb(37, 6, 37); color: white;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Loja de Doce</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body" style="background-color: rgb(77, 1, 84);;">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Chocolates</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Bolo</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Doces
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Balas</a></li>
+                                <li><a class="dropdown-item" href="#">Chicletes</a></li>
+
+
+
+                                <li><a class="dropdown-item" href="#">Pirulitos</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex mt-3" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12">
-            <button class="btn btn-sm btn-danger" id="btndanger">Apagar titulo info</button>
-            <h4 class="text-danger mt 2" id="Titulo_danger">Titulo danger</h4>
-        </div>
-    </div>
+    </nav>
 </body>
 
 </html>
