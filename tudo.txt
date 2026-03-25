@@ -1,0 +1,269 @@
+AVALIAÇÃO.JS
+async function iniciarAvaliação() {
+    const { value: text } = await Swal.fire({
+    input: "textarea",
+    inputLabel: "Nos de sua avaliação:",
+    inputPlaceholder: "Escreva aqui...",
+    inputAttributes: { "aria-label": "Type your message here" },
+    showCancelButton: true
+    });
+    if (text) Swal.fire(text);
+}
+BARRA.JS
+document.addEventListener('DOMContentLoaded', function () {
+    const rangeInput = document.getElementById('range4');
+    const rangeOutput = document.getElementById('rangeValue');
+
+    // Função para transformar o número em formato de moeda (R$)
+    function formatar(valor) {
+        return "R$ " + Number(valor).toFixed(2).replace(".", ",");
+    }
+
+    // Evento que dispara toda vez que você arrasta a barra
+    rangeInput.addEventListener('input', function () {
+        // Pega o valor atual da barra e joga formatado dentro do h2
+        rangeOutput.textContent = formatar(this.value);
+    });
+});
+LOGIN.JS
+async function iniciarCompra() {
+
+    const { value: email } = await Swal.fire({
+        title: "Identificação",
+        input: "email",
+        inputLabel: "Seu e-mail para o pedido",
+        inputPlaceholder: "exemplo@doce.com",
+        confirmButtonColor: "#250625"
+    });
+
+    if (!email) return;
+
+    const { value: password } = await Swal.fire({
+        title: "Segurança",
+        input: "password",
+        inputLabel: "Digite sua senha",
+        inputPlaceholder: "Sua senha secreta",
+        confirmButtonColor: "#250625",
+        inputAttributes: {
+            maxlength: "10",
+            autocapitalize: "off",
+            autocorrect: "off"
+        }
+    });
+
+    if (!password) return;
+
+
+    const { value: date } = await Swal.fire({
+        title: "Data de Entrega",
+        input: "date",
+        inputLabel: "Quando deseja receber seu Bruxolito?",
+        confirmButtonColor: "#250625"
+    });
+
+
+    if (date) {
+        Swal.fire({
+            icon: 'success',
+            title: 'Pedido Realizado!',
+            html: `O <b>Bruxolito</b> será enviado para <b>${email}</b> no dia <b>${date}</b>.`,
+            confirmButtonColor: "#250625"
+        });
+    }
+}
+PAODEMEL.JS
+async function iniciarCompra() {
+   
+    const { value: email } = await Swal.fire({
+        title: "Identificação",
+        input: "email",
+        inputLabel: "Seu e-mail para o pedido",
+        inputPlaceholder: "exemplo@doce.com",
+        confirmButtonColor: "#250625"
+    });
+
+    if (!email) return;
+
+ 
+    const { value: password } = await Swal.fire({
+        title: "Segurança",
+        input: "password",
+        inputLabel: "Digite sua senha",
+        inputPlaceholder: "Sua senha secreta",
+        confirmButtonColor: "#250625",
+        inputAttributes: {
+            maxlength: "10",
+            autocapitalize: "off",
+            autocorrect: "off"
+        }
+    });
+
+    if (!password) return;
+
+
+    const { value: date } = await Swal.fire({
+        title: "Data de Entrega",
+        input: "date",
+        inputLabel: "Quando deseja receber seu Bruxolito?",
+        confirmButtonColor: "#250625"
+    });
+
+
+    const { value: quantidade } = await Swal.fire({
+        title: "Escolha quantas unidades você deseja:",
+        input: "select",
+        inputOptions: {
+            "1": "1 Unidade",
+            "2": "2 Unidades",
+            "3": "3 Unidades",
+            "4": "4 Unidades",
+            "5": "5 Unidades"
+        },
+        inputPlaceholder: "Selecione a quantidade",
+        showCancelButton: true,
+        confirmButtonColor: "#250625",
+
+        inputValidator: (value) => {
+            if (!value) {
+                return "Você precisa selecionar uma quantidade!";
+            }
+        }
+    });
+
+    if (quantidade) {
+        Swal.fire({
+            title: 'Pedido Realizado!', 
+            text: `Você adicionou ${quantidade} item(s) ao carrinho.`,
+            html: `O <b>Bruxolito</b> será enviado para <b>${email}</b> no dia <b>${date}</b>.`,
+            icon: "success",
+            confirmButtonColor: "#250625"
+        });
+    }
+
+
+}
+SWEETALERT.JS
+$(document).ready(function () {
+    $("#chocolates").click(function () {
+
+        $("#bala").hide();
+        $("#bolo").hide();
+        $("#pirulito").hide();
+        $("#chocolate").show();
+        $("#paodemels").hide();
+        $("#bebidas").hide();
+        $("#bebidas2").hide();
+        $("#paodemel2").hide();
+        $("#bolo2").hide();
+        $("#chocolate2").show();
+        $("#bala2").hide();
+        $("#pirulito2").hide();
+
+
+    });
+    $("#todos").click(function () {
+
+        $("#bala").show();
+        $("#bolo").show();
+        $("#pirulito").show();
+        $("#chocolate").show();
+        $("#paodemels").show();
+        $("#bebidas").show();
+        $("#bebidas2").show();
+        $("#paodemel2").show();
+        $("#bolo2").show();
+        $("#chocolate2").show();
+        $("#bala2").show();
+        $("#pirulito2").show();
+
+
+    });
+    $("#balas").click(function () {
+
+        $("#bala").show();
+        $("#bolo").hide();
+        $("#pirulito").hide();
+        $("#chocolate").hide();
+        $("#paodemels").hide();
+        $("#bebidas").hide();
+        $("#bebidas2").hide();
+        $("#paodemel2").hide();
+        $("#bolo2").hide();
+        $("#chocolate2").hide();
+        $("#bala2").show();
+        $("#pirulito2").hide();
+
+
+    });
+    $("#pirulitos").click(function () {
+
+        $("#bala").hide();
+        $("#bolo").hide();
+        $("#pirulito").show();
+        $("#chocolate").hide();
+        $("#paodemels").hide();
+        $("#bebidas").hide();
+        $("#bebidas2").hide();
+        $("#paodemel2").hide();
+        $("#bolo2").hide();
+        $("#chocolate2").hide();
+        $("#bala2").hide();
+        $("#pirulito2").show();
+
+
+
+    });
+    $("#paodemel").click(function () {
+
+        $("#bala").hide();
+        $("#bolo").hide();
+        $("#pirulito").hide();
+        $("#chocolate").hide();
+        $("#paodemels").show();
+        $("#bebidas").hide();
+        $("#bebidas2").hide();
+        $("#paodemel2").show();
+        $("#bolo2").hide();
+        $("#chocolate2").hide();
+        $("#bala2").hide();
+        $("#pirulito2").hide();
+
+
+
+    });
+    $("#bolos").click(function () {
+
+        $("#bala").hide();
+        $("#bolo").show();
+        $("#pirulito").hide();
+        $("#chocolate").hide();
+        $("#paodemels").hide();
+        $("#bebidas").hide();
+        $("#bebidas2").hide();
+        $("#paodemel2").hide();
+        $("#bolo2").show();
+        $("#chocolate2").hide();
+        $("#bala2").hide();
+        $("#pirulito2").hide();
+
+
+
+    });
+    $("#bebida").click(function () {
+
+        $("#bala").hide();
+        $("#bolo").hide();
+        $("#pirulito").hide();
+        $("#chocolate").hide();
+        $("#paodemels").hide();
+        $("#bebidas").show();
+        $("#bebidas2").show();
+        $("#paodemel2").hide();
+        $("#bolo2").hide();
+        $("#chocolate2").hide();
+        $("#bala2").hide();
+        $("#pirulito2").hide();
+
+
+    });
+});
