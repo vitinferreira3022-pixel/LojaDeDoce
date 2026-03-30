@@ -1,0 +1,1 @@
+print("\nNão sei exatamente oq esta ruim mas, aqui vai os motivos pra melhorar:\n1 - Eu te amo\n2 - Po, hj é costas\n3 - Tem um cone de oreo te esperando\n4 - Do seu lado esquerdo tem alguem que te ama\n5 - Sei que isso pode nao te ajudar, mas você vai rir e eu ja fico feliz com isso bb\n6 - E óbvio, tem PING PONG hj cara")
